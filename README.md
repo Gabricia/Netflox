@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+NETFLOX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Il s'agit d'une copie du site de streaming vidéo Netflix.
 
-## Available Scripts
+Techno utilisée:
+React
+React-dom
+React-router-dom
+Styled-components: librairie utilisée afin de créer des composants plus facilement réutilisables
+Fuse.js: librairie utilisée permettant d'effectuer des recherches par mots clés à partir d'inputs
+Jest: librairie utilisée afin de tester le bon fonctionnement des composants
 
-In the project directory, you can run:
+Présentation détaillée du projet:
 
-### `npm start`
+Les pages:
+Le projet comprend 4 pages principales:
+-Home
+-Sign In
+-Sign Up
+-Browse
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Les pages contiennent différents containers divisant la page en parties eux mêmes composés de composants réutilibles dans lesquelles sont passées des données.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La page home est la page d'accueil vers laquelle l'utilisateur est envoyé s'il n'est pas connecté ou qu'il n'est pas inscrit.
+Les pages Sign In et Sign Up sont des pages de connexion et d'inscription classiques utilisant un formulaire de collecte de données.
+La page browse est la plus complexe dans le sens où elle contient deux expressions ternaires qui renvoient différentes composants en fonction de certains critères. En effet, comme le vrai Netflix, un compte peut avoir plusieurs utilisateurs avec des préférences diverses en terme de films et series (les fonctionnalités de recommandations et de préférences n'ont pas été intégrées à l'application). Ainsi quand l'utilisateur se connecte, avant d'arriver à l'écran avec la liste des films disponibles, il doit selectionner son profil. Par soucis de facilité, nous n'en avons crée qu'un. S'il clique sur son profil, les infos le concernant seront renvoyées dans le "header" (composants contenant le logo, la barre de recherche et le profil de l'utilisateur ) et il accedera enfin à la page avec les films/séries. Il pourra alors chercher des films par mots clés via la barre de recherche, voir le résumer d'un film en cliquant sur l'image de celui-ci ou encore lancer une vidéo en cliquant sur le bouton lecture dans le résumé du film séléctionné.
 
-### `npm test`
+De manière générale, les pages sont régies par une logique de routes privées qui redirigent l'utilisateur s'il est connecté ou non. Cette logique est mis en place dans le fichier "helpers".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Components:
+Les composants de l'application sont créés en utilisant la librairie "styled components"
 
-### `npm run build`
+Containers
+Les containers comme leur nom l'indiquent servent de contenants dans lesquels sont
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Utils:
+Dans le fichier utils nous créé une fonction qui permet de filtrer les films et séries par genre. Cette fonction nous permet de classer les films et séries par ligne de même genre et ainsi d'organiser la page de manière esthétique.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Custom hooks:
+Pour cette application, nous avons créé deux custom hooks:
+-Useauthlistener:
+Ce custom hook nous permet d'utiliser le localstorage pour stocker et récupérer l'identité 
+de l'utilisation d'une session à l'autre, afin qu'il n'ait pas à se connecter à chaque fois
+qu'il va sur le site.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-usecontent:
+Accède à la collection firebase de l'élément ciblé 
+et prend tous les documents qui y figurent
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Firebase:
+Firebase cloud firestore sert de back-end contenant les données relatives aux films et séries.
+Dans le cas présent, nous n'avons pas utilisé d'architecture REST étant donné que les données ont été saisis manuellement directement dans les collections du cloud firestore.
+Nous utilisons également sa méthode d'identification par email et mot de passe.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Jest Testing
+La majorité des composants et des pages sont testés via la librairie JEST.
+L'intégralité des test sont écrits et stockés dans le fichier "tests"

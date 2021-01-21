@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> renders the <Card /> with and clicks the card feature 1`] = `
+<div
+  class="card__Group-sc-1gemsww-2 IBfBI"
+>
+  <div
+    class="card__Container-sc-1gemsww-1 ihofcn"
+  >
+    <p
+      class="card__Title-sc-1gemsww-0 Mpegm"
+    >
+      Documentaries
+    </p>
+    <div
+      class="card__Entities-sc-1gemsww-5 cpdjZ"
+    >
+      <div
+        class="card__Item-sc-1gemsww-8 DfNSa"
+        data-testid="tiger-king-item-feature"
+      >
+        <img
+          class="card__Image-sc-1gemsww-7 iBfvtl"
+          src="/images/series/documentaries/tiger-king/small.jpg"
+        />
+        <div
+          class="card__Meta-sc-1gemsww-6 dmuWdB"
+        >
+          <p
+            class="card__SubTitle-sc-1gemsww-3 eaRkYG"
+          >
+            Tiger King
+          </p>
+          <p
+            class="card__Text-sc-1gemsww-4 gkbakL"
+          >
+            Tiger King description
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="card__Container-sc-1gemsww-1 ihofcn"
+  >
+    <p
+      class="card__Title-sc-1gemsww-0 Mpegm"
+    >
+      Feel Good
+    </p>
+    <div
+      class="card__Entities-sc-1gemsww-5 cpdjZ"
+    >
+      <div
+        class="card__Item-sc-1gemsww-8 DfNSa"
+        data-testid="juno-item-feature"
+      >
+        <img
+          class="card__Image-sc-1gemsww-7 iBfvtl"
+          src="/images/series/feel-good/juno/small.jpg"
+        />
+        <div
+          class="card__Meta-sc-1gemsww-6 dmuWdB"
+        >
+          <p
+            class="card__SubTitle-sc-1gemsww-3 eaRkYG"
+          >
+            Juno
+          </p>
+          <p
+            class="card__Text-sc-1gemsww-4 gkbakL"
+          >
+            Juno description
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Card /> renders the <Card /> with populated data 1`] = `
+<div
+  class="card__Group-sc-1gemsww-2 IBfBI"
+>
+  <div
+    class="card__Container-sc-1gemsww-1 ihofcn"
+  >
+    <p
+      class="card__Title-sc-1gemsww-0 Mpegm"
+    >
+      Documentaries
+    </p>
+    <div
+      class="card__Entities-sc-1gemsww-5 cpdjZ"
+    >
+      <div
+        class="card__Item-sc-1gemsww-8 DfNSa"
+      >
+        <img
+          class="card__Image-sc-1gemsww-7 iBfvtl"
+          src="/images/series/documentaries/tiger-king/small.jpg"
+        />
+        <div
+          class="card__Meta-sc-1gemsww-6 dmuWdB"
+        >
+          <p
+            class="card__SubTitle-sc-1gemsww-3 eaRkYG"
+          >
+            Tiger King
+          </p>
+          <p
+            class="card__Text-sc-1gemsww-4 gkbakL"
+          >
+            Tiger King description
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="card__Container-sc-1gemsww-1 ihofcn"
+  >
+    <p
+      class="card__Title-sc-1gemsww-0 Mpegm"
+    >
+      Feel Good
+    </p>
+    <div
+      class="card__Entities-sc-1gemsww-5 cpdjZ"
+    >
+      <div
+        class="card__Item-sc-1gemsww-8 DfNSa"
+      >
+        <img
+          class="card__Image-sc-1gemsww-7 iBfvtl"
+          src="/images/series/feel-good/juno/small.jpg"
+        />
+        <div
+          class="card__Meta-sc-1gemsww-6 dmuWdB"
+        >
+          <p
+            class="card__SubTitle-sc-1gemsww-3 eaRkYG"
+          >
+            Juno
+          </p>
+          <p
+            class="card__Text-sc-1gemsww-4 gkbakL"
+          >
+            Juno description
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
